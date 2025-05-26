@@ -1,9 +1,26 @@
 package org.example
 
 import java.time.LocalDateTime
+/* Data classes
 
+TripDetails
+id
+name
+source
+destination
+startDate
+endDate
+isJoinAllowed
+isFavouriteTrip
+slotsAvailable
+joinedMembersList
+
+
+SearchQuery
+query(source/destination)
+List<Dates>
+ */
 fun main() {
-    //println("Hello World!")
 
     val tripRepository = TripRepository()
 
@@ -43,9 +60,21 @@ fun main() {
 
     tripRepository.createTrip(trip3)
 
+    val trip4 = TripDetails(
+        id = 4,
+        tripName = "PranshTrip",
+        source = "Lucknow",
+        destination = "Manali",
+        isFavouriteTrip = false,
+        isJoinAllowed = false,
+        slotsAvailable = 0,
+    )
+
+    tripRepository.createTrip(trip4)
+
     println("GET ALL TRIPS")
     val tripList = tripRepository.getAllTrips()
-    println(tripList)
+    println("tripList: tripListSize = ${tripList.size} || $tripList")
 
     println()
     tripRepository.searchTripBySourceDestination(searchQuery = SearchQuery(query = "Kas"))
@@ -72,4 +101,6 @@ fun main() {
     tripRepository.removeTripFromFavourites(2)
     val favTrips2 = tripRepository.getFavouriteTrips()
     println("favTrips2 = listSize = ${favTrips2.size} || $favTrips2")
+
+    tripRepository.deleteTrip(4)
 }

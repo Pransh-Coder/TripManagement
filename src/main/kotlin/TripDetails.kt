@@ -12,6 +12,7 @@ data class TripDetails(
     val isFavouriteTrip:Boolean = false,
     val isJoinAllowed: Boolean,
 
+    //I forgot adding these
     val slotsAvailable:Int,
     var joinedMembersList: List<String> = emptyList()
 )

@@ -16,7 +16,8 @@ class TripRepository {
     fun deleteTrip(id: Int){
         val tripData = tripList.find { it.id == id }
         if (tripList.isNotEmpty()){
-            tripList.remove(tripData)
+            val isSuccess = tripList.remove(tripData)
+            println("Trip Deletion Success: $isSuccess")
         }
         else{
             throw Exception("No trips exists")
