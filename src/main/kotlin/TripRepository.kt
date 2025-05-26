@@ -2,6 +2,14 @@ package org.example
 
 class TripRepository {
 
+    /*
+    -- Users should be able to create trips with a unique trip name, source, destination, travel dates, and itinerary.
+    -- Users can search for trips by source or destination, optionally filtering based on travel dates.
+    -- Users can request to join trips created by others if allowed by the trip owner.
+    -- Users can mark/unmark trips as "Favorite" and retrieve a list of their favorite trips. (Additional if time remains)
+    -- Provide an option to delete trips created by a user. (Additional if time remains)
+    */
+
     private val tripList: ArrayList<TripDetails> = ArrayList()
 
     fun getAllTrips() : List<TripDetails> = tripList
